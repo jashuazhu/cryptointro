@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IC Testing in Crypto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="book-page">
+        <header class="book-header">
+            <p class="lead">Methodology</p>
+            <h1>Information Coefficient (IC) Testing</h1>
+        </header>
+
+        <section>
+            <p>In the cryptocurrency market, <strong>Information Coefficient (IC) testing</strong> is a quantitative method used to evaluate the accuracy and reliability of predictive signals (alpha factors) in an environment characterized by extreme volatility and 24/7 trading cycles.</p>
+            <p>Because crypto data often suffers from a low signal-to-noise ratio, IC testing acts as a primary validator for both alpha factor mining and the generation of synthetic market data.</p>
+        </section>
+
+        <section class="card">
+            <h3>1. Evaluating Alpha Factor Effectiveness</h3>
+            <p>In cryptocurrency portfolio selection, supervised learning models (like <strong>CATimeMixer</strong>) are used to transform noisy raw data into <strong>alpha factors</strong>—indicators that evaluate the potential returns of an asset.</p>
+            <ul>
+                <li><strong>Maximizing Predictive Accuracy:</strong> IC is used as a core objective in the loss functions of these models. The goal is to maximize the mean IC, which is the Pearson correlation between the generated alpha factor and the ground truth of crypto price movements.</li>
+                <li><strong>Rank-Based Accuracy (RankIC):</strong> In crypto markets, <strong>RankIC</strong> (the Spearman correlation between predicted and actual asset rankings) is often used to assess how well a model identifies the relative outperformance of different tokens.
+                    <ul>
+                        <li>For example, studies report a RankIC of approximately <strong>0.038</strong> for high-performing crypto prediction models.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h3>2. Validating Synthetic Time Series Data</h3>
+            <p>Because historical crypto data is limited and subject to rapid regime shifts, managers often use <strong>Time Series Generation (TSG)</strong> models to create synthetic data for stress testing and backtesting.</p>
+            <ul>
+                <li><strong>Predictive Utility Task:</strong> Synthetic crypto data is judged by its ability to train forecasting models. If an algorithm trained on synthetic data achieves a high IC when applied to real market data, the synthetic data is considered to have high "functional realism".</li>
+                <li><strong>Fidelity Benchmarking:</strong> Benchmarks like <strong>CTBench</strong> use IC and <strong>Information Ratio (IR)</strong> as part of a suite of 13 metrics to ensure that generated crypto sequences preserve the temporal and cross-sectional patterns necessary for trading.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h3>3. Optimizing Reinforcement Learning (RL) Agents</h3>
+            <p>Advanced crypto portfolio selection often employs a two-stage approach where the second stage uses <strong>Reinforcement Learning</strong> to adjust weights for different alpha factors.</p>
+            <ul>
+                <li><strong>Signal Significance:</strong> The RL agent uses metrics like IC to determine the significance of different factors.</li>
+                <li>Through training, agents learn to assign higher weights to factors that demonstrate consistently higher IC values during backtesting steps.</li>
+                <li><strong>Dynamic Adaptation:</strong> Because the effectiveness of alpha factors varies significantly over time in crypto, ongoing IC monitoring allows the agent to adapt its policy to changing market conditions.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h3>4. Addressing Market-Specific Biases</h3>
+            <p>IC testing in crypto must be guarded against "backtesting sins," particularly <strong>survivorship bias</strong>.</p>
+            <ul>
+                <li><strong>Historical Universe Tracking:</strong> Many crypto projects fail or are delisted. If IC testing is conducted only on "surviving" tokens, the results will be overly optimistic because the model assumes it "knew" which assets would fail in the future.</li>
+                <li><strong>Point-in-Time (PIT) Data:</strong> To avoid <strong>look-ahead bias</strong>, IC testing must ensure that the signals used for a specific date only reflect information that was actually available and known at that time.</li>
+            </ul>
+        </section>
+
+        <blockquote>
+            <strong>Analogy for IC Testing in Crypto:</strong> Think of the crypto market as a dense, fast-moving fog. <strong>Alpha factors</strong> are different types of high-tech flashlights (signals) you might use to see through it. <strong>IC testing</strong> is the yardstick you use to measure exactly how far ahead each flashlight allows you to see. If one flashlight (e.g., a momentum signal) has a higher IC than another, it simply means its beam is reaching further and more accurately into the future through the fog.
+        </blockquote>
+
+        <nav class="chapter-nav bottom">
+            <a href="index.html">Back to Index</a>
+            <span class="disabled">End</span>
+        </nav>
+    </main>
+</body>
+</html>

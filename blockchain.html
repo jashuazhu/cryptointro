@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Architecture</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-family: var(--sans-font); }
+        th, td { border: 1px solid rgba(124, 75, 45, 0.3); padding: 12px; text-align: left; }
+        th { background: rgba(124, 75, 45, 0.1); color: var(--accent); }
+        tr:nth-child(even) { background: rgba(124, 75, 45, 0.03); }
+    </style>
+</head>
+<body>
+    <main class="book-page">
+        <header class="book-header">
+            <p class="lead">Section 2.a</p>
+            <h1>Architectural Models: Monolithic vs Modular</h1>
+        </header>
+
+        <section>
+            <p>The choice between monolithic and modular blockchain architectures is a critical strategic decision in Web3 development, as it dictates how a system scales, handles data, and adapts to growth.</p>
+
+            <figure>
+                <video controls width="100%">
+                    <source src="Blockchain.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>Intro - Blockchain</figcaption>
+            </figure>
+        </section>
+
+        <section class="card">
+            <h2>Monolithic Blockchains</h2>
+            <p><strong>Definition:</strong> A monolithic blockchain is a system where all four core functions— execution, consensus, data availability, and settlement —operate together on a <strong>single, unified layer</strong>.</p>
+            <p><strong>Key Features:</strong> Tightly integrated architecture, vertical stacking, and native composability.</p>
+            
+            <h3>Pros:</h3>
+            <ul>
+                <li><strong>Simpler Deployment:</strong> Consistent tools and APIs make it easier for developers to launch decentralized applications (dApps) without managing separate layers.</li>
+                <li><strong>High Composability:</strong> Because all smart contracts exist in one environment, they can easily interact, which is vital for complex <strong>DeFi protocols</strong>.</li>
+            </ul>
+
+            <h3>Cons:</h3>
+            <ul>
+                <li><strong>Scalability Bottlenecks:</strong> All functions share resources; when activity spikes, the network can become congested, leading to slower speeds and higher fees.</li>
+                <li><strong>Upgrade Rigidity:</strong> Improving one component requires complex changes across the entire system, which can slow innovation.</li>
+            </ul>
+
+            <p><strong>Ideal Scenarios:</strong> High-speed, performance-critical environments like <strong>ultra-fast trading or blockchain gaming</strong> (e.g., <strong>Solana</strong>); single-purpose dApps; and early-stage projects prioritizing speed to market.</p>
+        </section>
+
+        <section class="card">
+            <h2>Modular Blockchains</h2>
+            <p><strong>Definition:</strong> A modular blockchain <strong>unbundles</strong> core functions into separate, specialized layers, allowing each layer to focus on a specific task.</p>
+            <p><strong>Key Features:</strong> Specialized layers (e.g., <strong>Celestia</strong> for data availability and consensus, or <strong>Rollups</strong> for execution) and a focus on horizontal scaling.</p>
+
+            <h3>Pros:</h3>
+            <ul>
+                <li><strong>Parallel Scalability:</strong> Each layer can scale independently, dramatically increasing transaction throughput.</li>
+                <li><strong>Faster Innovation:</strong> Developers can adopt cutting-edge solutions for individual layers without overhauling the entire network.</li>
+            </ul>
+
+            <h3>Cons:</h3>
+            <ul>
+                <li><strong>Coordination Complexity:</strong> Managing interactions between multiple modules increases the engineering burden and operational challenges.</li>
+                <li><strong>Fragmentation and Security Risks:</strong> Liquidity is often fragmented across different rollups, and the system relies on <strong>bridges</strong> that can introduce new attack surfaces.</li>
+            </ul>
+
+            <p><strong>Ideal Scenarios:</strong> High-volume <strong>DeFi protocols</strong> requiring low gas fees; <strong>Appchains</strong> that need custom governance or performance controls (e.g., <strong>dYdX</strong>); and projects that want to inherit the security of an established layer like Ethereum while optimizing for efficiency.</p>
+        </section>
+
+        <section>
+            <h2>Comparison Table Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Monolithic</th>
+                        <th>Modular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Architecture</strong></td>
+                        <td>All functions on one chain</td>
+                        <td>Functions split across specialized layers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scalability</strong></td>
+                        <td>Limited by single chain capacity</td>
+                        <td>Scales horizontally via layer specialization</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interoperability</strong></td>
+                        <td>Native within the chain</td>
+                        <td>Depends on bridges and cross-layer messaging</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Real-world Example</strong></td>
+                        <td>Solana, Bitcoin</td>
+                        <td>Celestia, Ethereum (rollup-centric)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <blockquote>
+            <strong>Analogy:</strong> A <strong>monolithic chain</strong> is like a <strong>small, high-end boutique hotel</strong> where the manager also handles the cooking, cleaning, and concierge services; it is easy to coordinate and offers a seamless experience, but service slows down significantly if a large tour group arrives at once.<br><br>
+            A <strong>modular chain</strong> is like a <strong>major airport hub</strong> where different companies handle the flights, baggage, security, and retail; it can handle thousands of people at once through specialization, but it requires complex schedules and transit systems (bridges) to make sure everyone gets to their destination safely.
+        </blockquote>
+
+        <nav class="chapter-nav bottom">
+            <a href="index.html">Back to Index</a>
+            <a href="conerns.html">Next: Concerns</a>
+        </nav>
+    </main>
+</body>
+</html>
